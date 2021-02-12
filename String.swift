@@ -4,14 +4,14 @@ import UIKit
 
 extension String {
     /**
-     Converts the string as html to a NSMutableAttributedString
+     Converts the string as html to a NSMutableAttributedString.
+
+     - Returns: An attributed string from html.
 
      Usage:
      ```
      let attributedString = "<b>Hello World</b>".htmlToMutableAttributedString
      ```
-
-     - Returns: An attributed string from html
      */
     var htmlToMutableAttributedString: NSMutableAttributedString? {
         guard let data = data(using: .utf8) else { return nil }
@@ -29,15 +29,15 @@ extension String {
     /**
      Creates a NSAttributedString with some parts in bold,  using the system font, ready to use in a label component.
 
+     - Parameter boldStrings: Strings to format as bold inside the full string.
+     - Parameter fullString: The whole string.
+     - Parameter ofSize: Size of the font.
+     - Returns: NSAttributedString with bold attribute in selected parts.
+
      Usage:
      ```
      let string = String.createBoldAttributedString(boldStrings: "World", fullString: "Hello World", ofSize: 14)
      ```
-
-     - Parameter boldStrings: Strings to format as bold inside the full string
-     - Parameter fullString: The whole string
-     - Parameter ofSize: Size of the font
-     - Returns: NSAttributedString with bold attribute in selected parts.
      */
     static func createBoldAttributedString(boldStrings: String..., fullString: String, ofSize size: Int) -> NSAttributedString {
         let boldAttribute = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: CGFloat(size))]
@@ -75,7 +75,7 @@ extension String {
 
 extension String {
     /**
-     Returns a string from the file specified in "tableName", otherwise, using default Localizable
+     Returns a string from the file specified in "tableName", otherwise, using default Localizable.
 
      Usage:
      ```
@@ -87,9 +87,9 @@ extension String {
     }
 
     /**
-     Returns a formatted string from the Localizable.strings using the variables passed as arguments
+     Returns a formatted string from the Localizable.strings using the variables passed as arguments.
 
-     - Parameter arguments: variables to format the string
+     - Parameter arguments: variables to format the string.
 
      Usage:
      ```
